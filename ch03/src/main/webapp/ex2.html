@@ -1,0 +1,58 @@
+﻿<!DOCTYPE HTML>
+<html>
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+<title>마진과 패딩</title>
+<style type="text/css">
+body {
+	font-family: "돋움", "맑은 고딕";
+	font-size: 0.8em;
+	color: #333;	
+	margin:0;
+	padding:0; 
+}
+.box1 {
+	margin:10px;
+	padding:10px;
+	border:1px solid #666;
+	width:300px;
+	background-color: #FFC;
+}
+.box2 {
+	border:1px solid #666;
+	width:300px;
+	background-color: #FCC;
+	
+	/*단축형  상하좌우가 모두 다른 경우*/
+	padding-top:10px;
+	padding-right:20px;
+	padding-bottom:30px;
+	padding-left:40px;
+	
+	padding:10px 20px 30px 40px;
+	
+	/*단축형2: 상하 좌우 같은 경우 상하 / 좌우*/
+	padding:10px 20px 30px 40px;
+	padding:10px 20px;
+	
+	/*단축형3: 상하 좌우 같은경우*/
+	padding:10px 50px 10px 50px;
+	padding: 10px 50px;
+	
+	
+	
+	
+}
+</style>
+</head>
+
+<body>
+<div class="box1">
+CSS에서 가장 보편적이고 많이 사용하는 마진과 패딩에 대한 값이 어떻게 적용되는지 확인해 보겠습니다.
+</div>
+<div class="box2">
+CSS에서 가장 보편적이고 많이 사용하는 마진과 패딩에 대한 값이 어떻게 적용되는지 확인해 보겠습니다.
+</div>
+
+</body>
+</html>
