@@ -1,0 +1,86 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Insert title here</title>
+<style type="text/css">
+* {margin:0; padding:0}
+ul,ol{list-style-type:none}
+body{font-family:'맑은 고딕' 돋움}
+
+.tab-box{width:520px; margin: 50px auto 0;}
+
+.tab-box ul{
+	height: 24px;
+}
+
+.tab-box ul li{
+	float:right;
+	width:100px;
+	height:22px;
+	background-color:#999;
+	border:1px solid #999;
+	border-radius: 10px 10px 0 0;
+	background-color:#ccc;
+	text-align : center;
+	margin-right:2px;
+	cursor:pointer;
+}
+
+.tab-box ul li.selected{
+	background-color: #FC6;
+}
+
+.tab-box div{
+	width: 516px;
+	border: 1px solid #999;
+	margin-top: -1px;
+	text-align:center;
+	line-height:200px;
+}
+</style>
+<script type="text/javascript">
+
+//DOM Level 2 Event 처리 : 특정 Element의 Event를 Listener하는 방식 
+// 2) JavaScript code(DOM API)로만 작성하기 
+
+var onTabClicked = function(){
+	
+	var liSelecteds = document.getElementsByClassName('selected');
+	(liSelecteds.length==1)&&(liSelecteds[0].className='');
+	
+	//select
+	this.className='selected';
+}
+
+window.addEventListener('load', function(){
+	// div: class='tab-box'
+	var divTabBox = document.getElementsByClassName('tab-box')[0];
+	var ulTabBox = divTabBox.childNodes[1];
+	var liTabs = ulTabBox.getElementsByTagName('li');
+	
+	for(var i = 0; i < liTabs.length; i++){
+		liTabs[i].addEventListener('click', onTabClicked);
+	}
+});
+
+window.addEventListener('load', function(){
+	console.log("dom loaded!!!!!");
+});
+</script>
+</head>
+<body>
+	<div class="tab-box">
+		<ul>
+	        <li>메뉴 5</li>
+	        <li>메뉴 4</li>
+	        <li>메뉴 3</li>
+	        <li>메뉴 2</li>
+	        <li>메뉴 1</li>
+	    </ul>
+	    <div>
+    		탭뷰입니다.
+   		</div>
+	</div>    
+</body>
+</html>
