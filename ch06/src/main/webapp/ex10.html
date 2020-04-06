@@ -8,31 +8,33 @@
 
 <script type="text/javascript">
 
-
-var displayDate = function(){
-	document.getElementById( "demo" ).innerHTML = Date();
+var MyObject = function(name,age){
+	this.name=name;
+	this.age=age;
 }
 
-var cleanUp = function(){
-	document.getElementById( "demo" ).innerHTML = "";	
+MyObject.prototype.school = "bit";
+MyObject.prototype.course = "douzone";
+MyObject.prototype.info=function(){
+	console.log(this.name+":"+this.age+":"+this.school+":"+this.course);
 }
 
-var onLoad = function() {
-	document.getElementById( "myButton" ).onclick = function() {
-		displayDate();
-	}	
-}
+
+var o1= new MyObject("둘리",10);
+o1.school="multicampus";
+console.log(o1.school+":"+o1.course);
+
+var o2 = new MyObject("마이콜",30);
+console.log(o2.school+":"+o2.course);
+
+console.log(o1.school +":"+o2.school);
+
+
+
 </script>
 
 </head>
-<body onload="onLoad()">
-<p>click button!!</p>
-<button id="myButton"
-	onmouseover= "displayDate()"
-	onmouseout= "cleanUp()"
->
-try it
-</button>
-<p id="demo"></p>
+<body>
+	<h1>Prototype</h1>
 </body>
 </html>
