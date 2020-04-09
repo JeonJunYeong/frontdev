@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Insert title here</title>
+<script type="text/javascript">
+// DOM Level2 Standard Event Model
+// IEB 대응(Cross-Browser) 이벤트 등록
+
+var registerEventHandler = function(element,eventName,handler){
+	element && 
+	element.attachEvent &&
+	element.attachEvent('on'+eventName,handler);
+	element &&
+	element.addEventListener &&
+	element.addEventListener(eventName,handler);
+	
+}
+
+window.addEventListener('load',function(){
+	var header = document.getElementById("header");
+	
+	header.addEventListener('click',function(){
+		console.log('click1');
+	});
+	
+	header.addEventListener('click',function(){
+		console.log('click2');
+	});
+	
+	header.addEventListener('click',function(){
+		console.log('click3');
+	});
+	
+	
+	header.removeEventListener('click',EventListener);
+});
+</script>
+</head>
+<body>
+	<h1 id='header'>click</h1>
+</body>
+</html>
