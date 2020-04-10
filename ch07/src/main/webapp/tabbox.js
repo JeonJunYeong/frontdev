@@ -33,8 +33,8 @@ var tabBox={
 		_selectId : null,
 		_arr : [],
 		_changeEvent: function(){
-			$('.tab-box ul li').removeAttr('class','selected');
-			$(this).attr('class','selected');
+			$('.tab-box ul li').removeClass('selected');
+			$(this).addClass('selected');
 			$('.tab-box div').text($(this).text()+'의 탭뷰입니다');
 			
 		},
