@@ -16,14 +16,18 @@ $(function(){
 	$obj.click(function(){
 		// 이벤트 핸들러에서 this는 jQuery 객체가 아니다. HTMLElement다.
 		console.log("clicked:" + this);
-		$(this).css("text-decoration", "underline");
+		
+
+		//jQuery Object의 모든 메소드는 this에 해당되는 jQuery Object를 반환한다 
+		$(this).css("text-decoration","undoerline")
+				.text('click');
 	});
 
 });
 </script>
 </head>
 <body>
-	<h1 id='header'>My jQuery 만들기</h1>
+	<h1 id='header'>jQuery Object</h1>
 	<p class="par">문장1</p>
 	<p>문장2</p>
 	<p class="par">문장3</p>

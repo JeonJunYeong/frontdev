@@ -5,11 +5,17 @@
 <script type="text/javascript" src="jquery/jquery3-4-1.js"></script>
 <title>Insert title here</title>
 <script>
+
+//jQuery는 DOM의 엘리멘트를 선택하는 작업을 먼저 보통 하기 때문에
+//DOM이 로딩된 이후에 보통 선택작업을 하여야 한다.
+
+//1. DOM 로딩 완료 시점: DOM API를 사용
 window.addEventListener('load',function(){
 	var $obj = jQuery('#header');
 	console.log($obj.length);
 });
 
+//1. DOM 로딩 완료 시;점
 jQuery(document).ready(function(){
 	var $obj=jQuery('#header');
 	console.log($obj.length);
@@ -26,6 +32,10 @@ $(function(){
 	var $obj=jQuery('#header');
 	console.log($obj.length);
 });
+
+/*추천 : jQuery를 사용하는 JavaScript 코드는 이 함수가 시작이된다.*/
+//document와 ready 함수를 생략하고 시작함수만 $()안에 넣는다.
+
 var selectHeader=function(){
 	var $obj=$('#header');
 	console.log($obj.length);
