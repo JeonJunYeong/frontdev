@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+<script type="text/javascript" src="jquery/jquery3-4-1.js"></script>
+<script type="text/javascript">
+	$(function() {
+		$("button").click(function() {
+			$.ajax({
+				url : "http://localhost:8090/ch07/data.xml",
+				dataType : 'xml',
+				success : function(data) {
+					$("item", data).each(function() {
+						var html = "";
+						html += ("<dt>" + $("title", this).text() + "</dt>");
+						html += ("<dd>" + $("description", this).text() + "</dd>");
+						
+						$("dl").append(html);
+
+					})
+				}
+			});
+		})
+	});
+</script>
+</head>
+
+<body>
+	<button>XML 가져오기</button>
+	<div>
+		<dl>
+
+		</dl>
+	</div>
+
+</body>
+</html>

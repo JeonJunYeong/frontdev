@@ -28,23 +28,21 @@
  */
 
 
-var tabBox={
+// jQuery 버젼
+var TabBox = {
+	init: function(){
+		$(this._init);		
+	},	
+	_init: function(){
+		$('.tab-box li').click(TabBox._changeTab);
+		TabBox._changeTab();
+	},
+	_changeTab: function(){
+		$('.tab-box li.selected').removeClass('selected');
 		
-		_selectId : null,
-		_arr : [],
-		_changeEvent: function(){
-			$('.tab-box ul li').removeClass('selected');
-			$(this).addClass('selected');
-			$('.tab-box div').text($(this).text()+'의 탭뷰입니다');
-			
-		},
-
-		
-		init: function(){
-			$(function(){
-				$('.tab-box ul li').eq(4).addClass('selected');
-				$('.tab-box div').text($('.tab-box ul li').eq(4).text()+'의 탭뷰입니다');
-				$('.tab-box ul li').click(tabBox._changeEvent);
-			});
-		}
+		var $liTab = (this == TabBox) ?	$('.tab-box li:first-child') : $(this);
+		var tabName =$liTab.text();
+		$('.tab-box div').text(tabName + "의 탭뷰입니다.");
+		$liTab.addClass('selected');
+	}	
 }
